@@ -1,0 +1,9 @@
+<?ml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="32001">
+        <setting id="enabled" type="bool" label="32110" default="false"/>
+        <setting id="speed" type="select" label="32101" lvalues="32102|32103|32104|32105|32106|32107|32108|32109"/>
+        <setting type="sep"/>
+        <setting id="debug" type="bool" label="32100" default="false" />
+    </category>
+</settings>

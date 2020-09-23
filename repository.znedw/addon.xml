@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.znedw" name="znedw" version="1.0.0" provider-name="znedw">
+    <extension point="xbmc.addon.repository" name="znedw's Repository">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/znedw/kodi.repository/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/znedw/kodi.repository/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/znedw/kodi.repository/master/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>znedw</summary>
+        <description>znedw</description>
+        <disclaimer></disclaimer>
+        <platform>all</platform>
+    </extension>
+</addon>
