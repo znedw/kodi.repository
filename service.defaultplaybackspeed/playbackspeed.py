@@ -58,11 +58,11 @@ class PlaybackSpeedPlayer(xbmc.Player):
         Debug("Ended")
         self.run = True
 
-    def onPlayBackStarted(self):
-        Debug("onPlayBackStarted")
+    def onAVStarted(self):
+        Debug("onAVStarted")
         enabled = __addon__.getSetting("enabled")
         speed = __addon__.getSetting("speed")
-        if (enabled == "true" and self.isPlayingVideo()):
+        if (enabled == "true"):
             Debug(
                 "Trying to set playback speed for value with index: {0}...".format(speed))
             try:
