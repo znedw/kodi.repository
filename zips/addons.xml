@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
+<addon id="repository.znedw" name="znedw" version="1.0.0" provider-name="znedw">
+    <extension point="xbmc.addon.repository" name="znedw's Repository">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/znedw/kodi.repository/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/znedw/kodi.repository/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/znedw/kodi.repository/master/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>znedw</summary>
+        <description>znedw</description>
+        <disclaimer></disclaimer>
+        <platform>all</platform>
+    </extension>
+</addon>
+
 <addon id="service.defaultplaybackspeed" name="Default Playback Speed" version="1.0.1" provider-name="znedw">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
@@ -22,19 +38,25 @@
     </extension>
 </addon>
 
-<addon id="repository.znedw" name="znedw" version="1.0.0" provider-name="znedw">
-    <extension point="xbmc.addon.repository" name="znedw's Repository">
-        <dir>
-            <info compressed="false">https://raw.githubusercontent.com/znedw/kodi.repository/master/zips/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/znedw/kodi.repository/master/zips/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/znedw/kodi.repository/master/zips/</datadir>
-        </dir>
-    </extension>
+<addon id="service.defaultplaybackspeed.matrix" name="Default Playback Speed" version="1.0.1" provider-name="znedw">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.service" library="service.py" />
     <extension point="xbmc.addon.metadata">
-        <summary>znedw</summary>
-        <description>znedw</description>
-        <disclaimer></disclaimer>
+        <summary lang="en">Default playback speed</summary>
+        <description lang="en">
+        Set the default playback speed when videos start playing...[CR][CR]Be sure to enable "Sync playback to display"[CR][CR]Under Settings -> Player -> Videos
+        </description>
+        <news>
+        v1.0.1 - use onAVStarted instead of isPlayingVideo
+        v1.0.0 - Initial release
+        </news>
         <platform>all</platform>
+        <license>See LICENSE.txt</license>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
     </extension>
 </addon>
 </addons>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="service.defaultplaybackspeed.matrix" name="Default Playback Speed" version="1.0.1" provider-name="znedw">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.service" library="service.py" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Default playback speed</summary>
+        <description lang="en">
+        Set the default playback speed when videos start playing...[CR][CR]Be sure to enable "Sync playback to display"[CR][CR]Under Settings -> Player -> Videos
+        </description>
+        <news>
+        v1.0.1 - use onAVStarted instead of isPlayingVideo
+        v1.0.0 - Initial release
+        </news>
+        <platform>all</platform>
+        <license>See LICENSE.txt</license>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon>
