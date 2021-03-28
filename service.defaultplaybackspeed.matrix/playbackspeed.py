@@ -1,6 +1,7 @@
 import os
 import xbmc
 import xbmcaddon
+import xbmcvfs
 
 __addon__ = xbmcaddon.Addon()
 __author__ = __addon__.getAddonInfo('author')
@@ -11,9 +12,9 @@ __language__ = __addon__.getLocalizedString
 debug = __addon__.getSetting("debug")
 enabled = __addon__.getSetting("enabled")
 speed = __addon__.getSetting("speed")
-__cwd__ = xbmc.translatePath(__addon__.getAddonInfo('path'))
-__profile__ = xbmc.translatePath(__addon__.getAddonInfo('profile'))
-__resource__ = xbmc.translatePath(os.path.join(__cwd__, 'resources'))
+__cwd__ = xbmcvfs.translatePath(__addon__.getAddonInfo('path'))
+__profile__ = xbmcvfs.translatePath(__addon__.getAddonInfo('profile'))
+__resource__ = xbmcvfs.translatePath(os.path.join(__cwd__, 'resources'))
 
 __settings__ = xbmcaddon.Addon("service.defaultplaybackspeed.matrix")
 
