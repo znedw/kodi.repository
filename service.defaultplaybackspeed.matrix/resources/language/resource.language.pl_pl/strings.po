@@ -1,0 +1,64 @@
+# Addon Name: Default Playback Speed
+# Addon id: service.defaultplaybackspeed.matrix
+# Addon Provider: znedw
+msgid ""
+msgstr ""
+"Project-Id-Version: Default Playback Speed\n"
+"Report-Msgid-Bugs-To: kodi@znedw.com\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Lantash\n"
+"Language-Team: Kodi PL addons (https://github.com/kpl-addons)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#32001"
+msgid "General"
+msgstr "Ogólne"
+
+msgctxt "#32100"
+msgid "Enable debug mode"
+msgstr "Uruchom tryb debugowania"
+
+msgctxt "#32101"
+msgid "Playback Speed"
+msgstr "Prędkość Odtwarzania"
+
+msgctxt "#32102"
+msgid "0.8x"
+msgstr "0.8x"
+
+msgctxt "#32103"
+msgid "0.9x"
+msgstr "0.9x"
+
+msgctxt "#32104"
+msgid "1.0x"
+msgstr "1.0x"
+
+msgctxt "#32105"
+msgid "1.1x"
+msgstr "1.1x"
+
+msgctxt "#32106"
+msgid "1.2x"
+msgstr "1.2x"
+
+msgctxt "#32107"
+msgid "1.3x"
+msgstr "1.3x"
+
+msgctxt "#32108"
+msgid "1.4x"
+msgstr "1.4x"
+
+msgctxt "#32109"
+msgid "1.5x"
+msgstr "1.5x"
+
+msgctxt "#32110"
+msgid "Enabled"
+msgstr "Włączony"
