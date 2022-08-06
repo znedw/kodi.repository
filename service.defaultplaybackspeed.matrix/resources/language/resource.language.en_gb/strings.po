@@ -62,3 +62,35 @@ msgstr ""
 msgctxt "#32110"
 msgid "Enabled"
 msgstr ""
+
+msgctxt "#32111"
+msgid "Press the key you want to assign now"
+msgstr ""
+
+msgctxt "#32112"
+msgid "Timeout in %.0f seconds..."
+msgstr ""
+
+msgctxt "#32113"
+msgid "Custom keybind"
+msgstr ""
+
+msgctxt "#32114"
+msgid "Speed Up key"
+msgstr ""
+
+msgctxt "#32115"
+msgid "Slow Down key"
+msgstr ""
+
+msgctxt "#32116"
+msgid "Restore Defaults"
+msgstr ""
+
+msgctxt "#32118"
+msgid "Default keys: ALT+LEFT - SLOW DOWN  ALT+RIGH - SPEED UP"
+msgstr ""
+
+msgctxt "#32119"
+msgid "Restoring default keys - clearing keymap file"
+msgstr ""

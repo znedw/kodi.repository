@@ -62,3 +62,35 @@ msgstr "1.5x"
 msgctxt "#32110"
 msgid "Enabled"
 msgstr "Włączony"
+
+msgctxt "#32111"
+msgid "Press the key you want to assign now"
+msgstr "Naciśnij klawisz do przypisania"
+
+msgctxt "#32112"
+msgid "Timeout in %.0f seconds..."
+msgstr "Pozostało %.0f sekund"
+
+msgctxt "#32113"
+msgid "Custom keybind"
+msgstr "Przypisanie klawiszy"
+
+msgctxt "#32114"
+msgid "Speed Up key"
+msgstr "Przycisk przyspieszenia"
+
+msgctxt "#32115"
+msgid "Slow Down key"
+msgstr "Przycisk opóźnienia"
+
+msgctxt "#32116"
+msgid "Restore Defaults"
+msgstr "Przywróć domyślne"
+
+msgctxt "#32118"
+msgid "Default keys: ALT+LEFT - SLOW DOWN  ALT+RIGH - SPEED UP"
+msgstr "Klawisze domyślne: ALT+LEFT - OPÓŹNIENIE  ALT+RIGH - PRZYSPIESZENIE"
+
+msgctxt "#32119"
+msgid "Restoring default keys - clearing keymap file"
+msgstr "Przywraca domyślne klawisze - usuwa plik ustawień"

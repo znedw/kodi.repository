@@ -1,7 +1,8 @@
-import os
+import os, sys
 import xbmc
 import xbmcaddon
 import xbmcvfs
+import json
 
 __addon__ = xbmcaddon.Addon()
 __author__ = __addon__.getAddonInfo('author')
@@ -42,6 +43,44 @@ def Debug(msg, force=False):
 
 Debug("Loading '%s' version '%s'" % (__scriptname__, __version__))
 
+def rpc(method, **params):
+    params = json.dumps(params)
+    query = f'{{"jsonrpc": "2.0", "method": "{method}", "params": {params}, "id": 1}}'
+    return json.loads(xbmc.executeJSONRPC(query))
+
+
+def set_rpc():
+    rpc('Settings.SetSettingValue',
+        setting="videoplayer.usedisplayasclock",
+        value=True)
+
+
+def get_rpc():
+    r = rpc('Settings.GetSettingValue',
+            setting="videoplayer.usedisplayasclock")
+    r = r.get('result').get('value')
+    return r
+
+
+def Setup_Kodi():
+    if (enabled == 'true' and get_rpc()):
+        pass
+    elif (enabled == 'true' and not get_rpc()):
+        set_rpc()
+
+
+if len(sys.argv) > 1:
+
+    """
+    Custom keybinding - entry from settings.xml 
+    alt+LEFT and alt+RIGHT  still valid
+    Setting 'Sync playback to display' enabled via jsonrpc
+    """
+    from lib import keybinder
+    keybinder.main()
+    Setup_Kodi()
+    exit()
+
 
 class PlaybackSpeedPlayer(xbmc.Player):
     def __init__(self, *args, **kwargs):
@@ -64,6 +103,7 @@ class PlaybackSpeedPlayer(xbmc.Player):
         enabled = __addon__.getSetting("enabled")
         speed = __addon__.getSetting("speed")
         if (enabled == "true"):
+            Setup_Kodi()
             Debug(
                 "Trying to set playback speed for value with index: {0}...".format(speed))
             try:
@@ -93,3 +133,5 @@ class PlaybackSpeedRunner:
     while not monitor.abortRequested():
         monitor.waitForAbort(1)
     del player
+
+

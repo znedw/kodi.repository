@@ -1,9 +1,86 @@
 <?ml version="1.0" encoding="utf-8" standalone="yes"?>
-<settings>
-    <category label="32001">
-        <setting id="enabled" type="bool" label="32110" default="false"/>
-        <setting id="speed" type="select" label="32101" lvalues="32102|32103|32104|32105|32106|32107|32108|32109"/>
-        <setting type="sep"/>
-        <setting id="debug" type="bool" label="32100" default="false" />
+<settings version="1">
+<section id="service.defaultplaybackspeed.matrix">
+    <category id="preferences" label="32001" help="">
+        <group id="1">
+            <setting id="enabled" type="boolean" label="32110" help="">
+                <level>0</level>
+                <default>false</default>
+                <control type="toggle"/>
+            </setting>
+            <setting id="speed" type="string" label="32101" help="">
+                <level>0</level>
+                    <default>1.0x</default>
+                <dependencies>
+                    <dependency type="visible" setting="enabled">true</dependency>
+                </dependencies>
+                <constraints>
+                    <options>
+                        <option label="32102">0</option>
+                        <option label="32103">1</option>
+                        <option label="32104">2</option>
+                        <option label="32105">3</option>
+                        <option label="32106">4</option>
+                        <option label="32107">5</option>
+                        <option label="32108">6</option>
+                        <option label="32109">7</option>
+                    </options>
+                </constraints>
+                <control type="list" format="string"/>
+            </setting>
+        </group>
+        <group id="2">
+            <setting id="custom_keys" type="boolean" label="32113" help="32118">
+                <level>0</level>
+                <default>false</default>
+                <control type="toggle"/>
+            </setting>
+            <setting id="customkeyup" type="string" label="32114" help="32118">
+                <level>0</level>
+                <dependencies>
+                    <dependency type="visible" setting="custom_keys">true</dependency>
+                </dependencies>
+                <default>alt + RIGHT</default>
+                <constraints>
+                    <allowempty>true</allowempty>
+                </constraints>
+                <control type="button" format="action">
+                    <data>RunScript(service.defaultplaybackspeed.matrix, up)</data>
+                    <!--close>true</close-->
+                </control>
+            </setting>
+            <setting id="customkeydown" type="string" label="32115" help="32118">
+                <level>0</level>
+                <dependencies>
+                    <dependency type="visible" setting="custom_keys">true</dependency>
+                </dependencies>
+                <default>alt + LEFT</default>
+                <constraints>
+                    <allowempty>true</allowempty>
+                </constraints>
+                <control type="button" format="action">
+                    <data>RunScript(service.defaultplaybackspeed.matrix, down)</data>
+                    <!--close>true</close-->
+                </control>
+            </setting>
+            <setting id="customkeydefault" type="action" label="32116" help="32119">
+                <level>0</level>
+                <dependencies>
+                    <dependency type="visible" setting="custom_keys">true</dependency>
+                </dependencies>
+                <data>RunScript(service.defaultplaybackspeed.matrix, default)</data>
+                <control type="button" format="action">
+                    <close>false</close>
+                </control>
+            </setting>
+        </group>
+        <group id="3">
+            <setting id="debug" type="boolean" label="32100" help="">
+                <level>0</level>
+                <default>false</default>
+                <control type="toggle"/>
+            </setting>
+        </group>
     </category>
+</section>
 </settings>
