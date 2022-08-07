@@ -1,18 +1,21 @@
-import os, sys
-import xbmcaddon, xbmc
+import xml.etree.ElementTree as ET
+import os
+import sys
+import xbmcaddon
+import xbmc
 import xbmcvfs
 from threading import Timer
-from xbmcgui import Dialog, WindowXMLDialog
+from xbmcgui import WindowXMLDialog
 tr = xbmcaddon.Addon().getLocalizedString
 setSetting = xbmcaddon.Addon().setSetting
 
-import xml.etree.ElementTree as ET
 
 userdata = xbmcvfs.translatePath('special://userdata/keymaps')
 key_file = os.path.join(userdata, 'playspeed.xml')
 
+
 def indent(elem, level=0):
-    #xml pretty print as xml.etree not supporting
+    # xml pretty print as xml.etree not supporting
     i = "\n" + level * "  "
     j = "\n" + (level - 1) * "  "
     if len(elem):
@@ -38,12 +41,14 @@ def setup_keymap_folder():
     if not os.path.exists(userdata):
         os.makedirs(userdata)
 
+
 def _backup_file():
 
     fpathbak = f'{key_file}.bak'
     if xbmcvfs.exists(fpathbak):
         xbmcvfs.delete(fpathbak)
     return xbmcvfs.copy(key_file, fpathbak)
+
 
 def main():
 
@@ -71,14 +76,15 @@ def main():
             key_xml = ET.parse(key_file)
             root = key_xml.getroot()
             try:
-                tag = [t for t in root.findall(f'.//key') if t.text == command][0]
+                tag = [t for t in root.findall(
+                    f'.//key') if t.text == command][0]
             except IndexError:
                 # If only one key stored in keymap file
                 tag_up = root.find('.//keyboard')
                 tag = ET.SubElement(tag_up, 'key')
                 tag.text = command
 
-            #key interception
+            # key interception
             key = KeyListener.record_key()
             tag.set('id', key)
             _backup_file()
@@ -86,7 +92,7 @@ def main():
             Debug(repr(e))
             return
     else:
-        #build up keymap xml file
+        # build up keymap xml file
         root = ET.Element('keymap')
         tag1 = ET.SubElement(root, 'fullscreenvideo')
         tag2 = ET.SubElement(tag1, 'keyboard')
@@ -137,4 +143,3 @@ class KeyListener(WindowXMLDialog):
         key = dialog.key
         del dialog
         return key
-

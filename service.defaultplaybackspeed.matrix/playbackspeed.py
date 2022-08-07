@@ -1,4 +1,5 @@
-import os, sys
+import os
+import sys
 import xbmc
 import xbmcaddon
 import xbmcvfs
@@ -42,6 +43,7 @@ def Debug(msg, force=False):
 
 
 Debug("Loading '%s' version '%s'" % (__scriptname__, __version__))
+
 
 def rpc(method, **params):
     params = json.dumps(params)
@@ -133,5 +135,3 @@ class PlaybackSpeedRunner:
     while not monitor.abortRequested():
         monitor.waitForAbort(1)
     del player
-
-
